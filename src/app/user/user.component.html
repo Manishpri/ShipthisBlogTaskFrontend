@@ -1,0 +1,33 @@
+<form [formGroup] = "userForm" (ngSubmit) = "signUp()">
+    <label>
+      <p class="label-txt">ENTER USER NAME</p>
+      <input type="text" class="input" formControlName = "userName">
+      <div *ngIf="f.userName.touched && f.userName.invalid" class="alert alert-danger">
+        <div *ngIf="f.userName.errors.required">userName is required.</div>
+    </div>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR PASSWORD</p>
+      <input type="text" class="input" formControlName = "pass">
+      <div *ngIf="f.pass.touched && f.pass.invalid" class="alert alert-danger">
+        <div *ngIf="f.pass.errors.required">password is required.</div>
+    </div>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <label>
+      <p class="label-txt">ENTER YOUR DATE OF BIRTH</p>
+      <input type="date" class="input" formControlName = "dateOfBirth">
+      <div *ngIf="f.dateOfBirth.touched && f.dateOfBirth.invalid" class="alert alert-danger">
+        <div *ngIf="f.dateOfBirth.errors.required">Date Of Birth is required.</div>
+    </div>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <input type="submit" name="" class="btn btn-success" value="submit" [disabled] = "!userForm.valid">
+  </form>
